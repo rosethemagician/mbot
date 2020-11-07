@@ -4,7 +4,7 @@ MBOT is a twitch chatbot that does some stuff
 
 ## Installation
 
-you need maven to install the dependencies. After cloning the project, run on command line: 
+you need [maven](https://maven.apache.org/) to install the dependencies. After cloning the project, run on command line: 
 
 ```bash
 mvn clean install
