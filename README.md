@@ -15,7 +15,8 @@ you need to put some configurations such as twitch account credentials (oauth to
 ## Dependencies
 
 - [Spring Boot](https://spring.io/projects/spring-boot)
-- [twitch4j](https://spring.io/projects/spring-data)
+- [SpringData](https://spring.io/projects/spring-data)
+- [twitch4j](https://twitch4j.gitlab.io/twitch4j/getting-started/installation/)
 - [Flyway](https://flywaydb.org/)
 - [Model Mapper](http://modelmapper.org/user-manual/)
 - [Gson](https://github.com/google/gson)
