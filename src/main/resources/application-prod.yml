@@ -15,7 +15,7 @@ spring:
   main:
     allow-bean-definition-overriding: true
   application:
-    name: central-negociacao-notificacao-service
+    name: mbot
   datasource:
     url: jdbc:postgresql://localhost:5432/mbot
     username: pi
