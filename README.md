@@ -20,6 +20,7 @@ you need to put some configurations such as twitch account credentials (oauth to
 - [Flyway](https://flywaydb.org/)
 - [Model Mapper](http://modelmapper.org/user-manual/)
 - [Gson](https://github.com/google/gson)
+- [Lombok](https://projectlombok.org/)
 
 ## Running locally (its gonna use in-memory database H2)
 
