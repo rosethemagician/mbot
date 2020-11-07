@@ -4,11 +4,13 @@ MBOT is a twitch chatbot that does some stuff
 
 ## Installation
 
-you need maven to install the dependencias, after cloning the project, on command line: 
+you need maven to install the dependencies. After cloning the project, run on command line: 
 
 ```bash
 mvn clean install
 ```
+
+you need to put some configurations such as twitch account credentials (oauth tokens and client id/secret). Check ``application-prod / application-local`` for more information. 
 
 ## Dependencies
 
@@ -24,7 +26,7 @@ mvn clean install
 mvn spring-boot:run -Dspring-boot.run.profiles=local
 ```
 
-## Running locally using Postgre DB (check configurations in `application-prod`)
+## Running locally using Postgre DB
 
 ```shell
 mvn spring-boot:run -Dspring-boot.run.profiles=prod
