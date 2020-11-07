@@ -10,7 +10,7 @@ you need maven to install the dependencies. After cloning the project, run on co
 mvn clean install
 ```
 
-you need to put some configurations such as twitch account credentials (oauth tokens and client id/secret). Check ``application-prod / application-local`` for more information. 
+you need to put some configurations such as twitch account credentials (oauth tokens and client id/secret). Check the files ``application-prod / application-local`` for more information. 
 
 ## Dependencies
 
