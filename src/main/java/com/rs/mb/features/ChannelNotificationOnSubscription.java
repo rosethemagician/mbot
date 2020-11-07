@@ -1,0 +1,53 @@
+package com.rs.mb.features;
+
+import com.github.philippheuer.events4j.simple.SimpleEventHandler;
+import com.github.twitch4j.chat.events.channel.SubscriptionEvent;
+import org.springframework.beans.factory.annotation.Value;
+
+public class ChannelNotificationOnSubscription {
+
+    @Value("${magicbot.owner}")
+    private String owner;
+
+    /**
+     * Register events of this class with the EventManager/EventHandler
+     *
+     * @param eventHandler SimpleEventHandler
+     */
+    public ChannelNotificationOnSubscription(SimpleEventHandler eventHandler) {
+        eventHandler.onEvent(SubscriptionEvent.class, event -> onSubscription(event));
+    }
+
+    /**
+     * Subscribe to the Subscription Event
+     */
+    public void onSubscription(SubscriptionEvent event) {
+
+        if (!event.getChannel().getName().equalsIgnoreCase(owner)) {
+            return;
+        }
+
+        String message = "";
+
+        // New Subscription
+        if (event.getMonths() <= 1) {
+            message = String.format(
+                    "%s has subscribed to %s!",
+                    event.getUser().getName(),
+                    event.getChannel().getName()
+            );
+        }
+        // Resubscription
+        if (event.getMonths() > 1) {
+            message = String.format(
+                    "%s has subscribed to %s in his %s month!",
+                    event.getUser().getName(),
+                    event.getChannel().getName(),
+                    event.getMonths()
+            );
+        }
+
+        // Send Message
+        event.getTwitchChat().sendMessage(event.getChannel().getName(), message);
+    }
+}

@@ -1,0 +1,53 @@
+magicbot:
+  owner: 'rosethemagician'
+  irc:
+  command-prefix: '&'
+  twitch:
+    client:
+      id:
+      secret:
+  twitter:
+    oauth1:
+    oauth2:
+    token:
+    secret:
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: central-negociacao-notificacao-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mbot
+    username: pi
+    password: root
+    driverClassName: org.postgresql.Driver
+  flyway:
+    url: jdbc:postgresql://localhost:5432/mbot
+    user: pi
+    password: root
+    table: flyway_schema_history
+    schemas: mbot
+    baseline-on-migrate: true
+    clean-on-validation-error: true
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        default_schema: mbot
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+logging:
+  level:
+    root: info
+    org.hibernate.SQL: debug
+
+

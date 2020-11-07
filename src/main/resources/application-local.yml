@@ -1,0 +1,57 @@
+magicbot:
+  owner: 'rosethemagician'
+  irc:
+  command-prefix: '&'
+  twitch:
+    client:
+      id: 
+      secret:
+  twitter:
+    oauth1:
+    oauth2:
+    token:
+    secret:
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: central-negociacao-notificacao-service
+  datasource:
+    url: jdbc:h2:./data/mbot;Mode=Oracle;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE;DB_CLOSE_ON_EXIT=FALSE;DATABASE_TO_UPPER=false;
+    driverClassName: org.h2.Driver
+    username: sa
+    data-password:
+    tomcat:
+      access-to-underlying-connection-allowed: true
+  flyway:
+    enabled: true
+    url: jdbc:h2:./data/mbot
+    user: sa
+    password:
+    locations: classpath:db/migration
+    schemas: mbot
+    table: FLYWAY_SCHEMA_HISTORY
+    baseline-on-migrate: true
+    clean-on-validation-error: true
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        default_schema: mbot
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+logging:
+  level:
+    root: info
+    org.hibernate.SQL: debug
+
+

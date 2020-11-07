@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/mbot
+    username: root
+    password: root
+  flyway:
+    url: jdbc:mysql://localhost/mbot
+    user: root
+    password: root
+    table: flyway_schema_history
+    schemas: mbot
